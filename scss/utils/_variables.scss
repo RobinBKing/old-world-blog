@@ -1,0 +1,99 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// primary font family
+$primary-font-family: 'minion-pro','Times New Roman',serif;
+
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Red
+// @type Color
+$red: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+/// Black
+/// @type Color
+$black: #222222;
+
+/// White
+/// @type Color
+$white: #ffffff;
+
+/// Off White
+/// @type Color
+$off-white: #fffeff;
+
+/// primary background color
+/// @type Color
+$primary-background-color: $black !default;
+
+/// primary text color
+/// @type Color
+$primary-text-color: $white !default;
+
+
+/// Copy text color
+/// @type Color
+$text-color: $black !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: $white;
+
+
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+  'small': (320px),
+  'medium': (600px),
+  'large': (1140px),
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../img' !default;
+
+///margin setting for center
+///@type margin
+$margin-auto-center: 0, auto;
+
+///padding setting for nav and ul
+///@type padding
+$nav-padding: 0.5rem 0.5rem 0 0.5rem;
