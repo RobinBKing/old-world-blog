@@ -9,26 +9,23 @@
 // neat sccs
 @import 'neat/neat';
 
-// bitters
-@import 'base/base';
-
 // 1. Configuration and helpers
-// @import 'utils/index';
+@import 'utils/utils';
 
 // 2. Vendors
-// @import 'vendor/index';
+@import 'vendor/index';
 
-// 3. Base stuff
-// @import 'base/index';
+// 3. Base stuff -- cloned from bitters
+@import 'base/base';
 
 // 4. Layout-related sections
-@import 'layout/index';
+@import 'layout/layout';
 
 // 5. Components
-// @import 'components/index';
+@import 'components/components';
 
 // 6. Page-specific styles
-@import 'pages/index';
+@import 'pages/pages';
 
 // 7. Themes
 // @import 'themes/index';

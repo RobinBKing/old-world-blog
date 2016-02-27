@@ -1,6 +1,64 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
+// This file contains all styles related to the header of  the site/application.
 // ----------------------------------------------------------------------------
+.banner {
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $banner-background-top: #7F99BE;
+  $banner-background-bottom: #20392B;
+  $banner-color: white;
+  $gradient-angle: 10deg;
+  $banner-image: '../img/banner.jpg';
+
+  @include background(url($banner-image), linear-gradient($gradient-angle, $banner-background-bottom, $banner-background-top), no-repeat $banner-background-top scroll);
+  background-color: #324766;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em;
+
+  .banner-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .banner-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    .banner-copy {
+      text-align: center;
+
+      h1 {
+        color: $banner-color;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+        font-family: "Redressed";
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        color: $banner-color;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto;
+        font-family: "Redressed";
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
+  }
+}
+
 // Based on http://codepen.io/skeurentjes/
 header.navigation {
   $base-border-color: gainsboro !default;

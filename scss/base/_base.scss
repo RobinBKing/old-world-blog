@@ -3,12 +3,15 @@
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
 
-@import "variables";
+// @import "variables";  // moved to utils folder
 
 // Neat Settings -- uncomment if using Neat -- must be imported before Neat
 // @import "grid-settings";
 
-@import "buttons";
+@import "reset"; //added
+@import "fonts"; //added
+
+// @import "buttons"; moved to components folder
 @import "forms";
 @import "lists";
 @import "tables";
