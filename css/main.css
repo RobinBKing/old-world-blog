@@ -991,7 +991,7 @@ html, body {
           .contentWrapper .contentWrapper-inner .contentWrapper-copy p {
             font-size: 1.1em;
             max-width: 40%; } }
-  .contentWrapper .bullets {
+  .contentWrapper .blog-entries {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1010,7 +1010,7 @@ html, body {
     margin: 1em;
     overflow: auto;
     padding: 0; }
-    .contentWrapper .bullets .bullet {
+    .contentWrapper .blog-entries .blog-entry {
       -webkit-flex-basis: 20em;
       -moz-flex-basis: 20em;
       flex-basis: 20em;
@@ -1019,34 +1019,34 @@ html, body {
       -moz-flex-grow: 1;
       flex-grow: 1;
       -ms-flex-positive: 1; }
-    .contentWrapper .bullets .bullet-icon {
-      background: #1565c0;
+    .contentWrapper .blog-entries .blog-entry-icon {
+      background: rgba(51, 51, 51, 0.2);
       border-radius: 50%;
       float: left;
-      height: 3.5em;
-      padding: 0.875em;
-      width: 3.5em; }
-    .contentWrapper .bullets .bullet-icon-1 {
+      height: 5em;
+      padding: 1.25em;
+      width: 5em; }
+    .contentWrapper .blog-entries .blog-entry-icon-1 {
       background: #1565c0; }
-    .contentWrapper .bullets .bullet-icon-2 {
+    .contentWrapper .blog-entries .blog-entry-icon-2 {
       background: #15c08d; }
-    .contentWrapper .bullets .bullet-icon-3 {
+    .contentWrapper .blog-entries .blog-entry-icon-3 {
       background: #9ec015; }
-    .contentWrapper .bullets .bullet-content {
-      margin-left: 4.9em;
+    .contentWrapper .blog-entries .blog-entry-content {
+      margin-left: 7em;
       margin-bottom: 2em; }
-    .contentWrapper .bullets h2 {
+    .contentWrapper .blog-entries h2 {
       border-bottom: 1px solid rgba(51, 51, 51, 0.2);
       display: inline-block;
-      font-size: 1.4em;
-      margin: 0 0 0.58333em 0;
-      padding-top: 0.5em; }
-    .contentWrapper .bullets li {
+      font-size: 2em;
+      margin: 0 0 0.83333em 0;
+      padding-top: 0.71429em; }
+    .contentWrapper .blog-entries li {
       list-style: none; }
-    .contentWrapper .bullets p {
+    .contentWrapper .blog-entries p {
       color: #333;
       line-height: 1.5; }
-    .contentWrapper .bullets img {
+    .contentWrapper .blog-entries img {
       max-width: 100%; }
   .contentWrapper .comment {
     border-bottom: 1px solid rgba(51, 51, 51, 0.1);

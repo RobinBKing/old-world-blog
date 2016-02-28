@@ -61,13 +61,14 @@ html, body {
       }
     }
   }
-  //bullets
-  .bullets {
+  //blog-entries
+  .blog-entries {
     $base-line-height: 1.5em !default;
     $action-color: #477DCA !default;
     $dark-gray: #333 !default;
     $base-font-color: $dark-gray !default;
-    $icon-bullet-size: 3.5em;
+    $icon-blog-entry-size: 5em;
+    $base-background-color: transparentize($base-font-color, 0.8);
 
     @include display(flex);
     @include flex-wrap(wrap);
@@ -76,43 +77,43 @@ html, body {
     overflow: auto;
     padding: 0;
 
-    .bullet {
+    .blog-entry {
       @include flex-basis(20em);
       @include flex-grow(1);
     }
 
-    .bullet-icon {
-      background: $action-color;
+    .blog-entry-icon {
+      background: $base-background-color;
       border-radius: 50%;
       float: left;
-      height: $icon-bullet-size;
-      padding: $icon-bullet-size / 4;
-      width: $icon-bullet-size;
+      height: $icon-blog-entry-size;
+      padding: $icon-blog-entry-size / 4;
+      width: $icon-blog-entry-size;
     }
 
-    .bullet-icon-1 {
+    .blog-entry-icon-1 {
       background: $action-color;
     }
 
-    .bullet-icon-2 {
+    .blog-entry-icon-2 {
       background: adjust-hue($action-color, -50%);
     }
 
-    .bullet-icon-3 {
+    .blog-entry-icon-3 {
       background: adjust-hue($action-color, -140%);
     }
 
-    .bullet-content {
-      margin-left: $icon-bullet-size * 1.4;
+    .blog-entry-content {
+      margin-left: $icon-blog-entry-size * 1.4;
       margin-bottom: 2em;
     }
 
     h2 {
-      border-bottom: 1px solid transparentize($base-font-color, 0.8);
+      border-bottom: 1px solid $base-background-color;
       display: inline-block;
-      font-size: $icon-bullet-size / 2.5;
-      margin: 0 0 ($icon-bullet-size / 6) 0;
-      padding-top: $icon-bullet-size / 7;
+      font-size: $icon-blog-entry-size / 2.5;
+      margin: 0 0 ($icon-blog-entry-size / 6) 0;
+      padding-top: $icon-blog-entry-size / 7;
     }
 
     li {
