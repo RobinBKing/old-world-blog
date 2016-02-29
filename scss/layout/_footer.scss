@@ -11,10 +11,6 @@
 }
 
 .footer-2 {
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
   $footer-background: desaturate(darken($action-color, 20%), 30%);
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, 0.6);
@@ -36,7 +32,7 @@
   }
 
   .footer-logo img {
-    height: 1.6em;
+    height: 2.6em;
   }
 
   ul {

@@ -24,6 +24,10 @@ body {
   line-height: $base-line-height;
 }
 
+html, body {
+ height: auto;
+}
+
 h1,
 h2,
 h3,

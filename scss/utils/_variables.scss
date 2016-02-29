@@ -2,7 +2,7 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: $redressed;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -17,12 +17,18 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+
 
 // Colors
 $blue: #1565c0;
+$blue-gray: #324766;
+$ligh-blue-gray: #7F99BE;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$dark-green: #20392B;
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -33,7 +39,7 @@ $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: transparentize($base-font-color, 0.8);
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
@@ -43,99 +49,3 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
-
-// /// primary font family
-// $primary-font-family: 'minion-pro','Times New Roman',serif;
-//
-// /// @type List
-// $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
-//
-// /// Code (monospace) font family
-// /// @type List
-// $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-//
-// /// Red
-// // @type Color
-// $red: rgb(229, 0, 80) !default;
-//
-// /// Light grey
-// /// @type Color
-// $light-grey: rgb(237, 237, 237) !default;
-//
-// /// Medium grey
-// /// @type Color
-// $mid-grey: rgb(153, 153, 153) !default;
-//
-// /// Dark grey
-// /// @type Color
-// $dark-grey: rgb(68, 68, 68) !default;
-//
-// /// Black
-// /// @type Color
-// $black: #222222;
-//
-// /// White
-// /// @type Color
-// $white: #ffffff;
-//
-// /// Off White
-// /// @type Color
-// $off-white: #fffeff;
-//
-// /// primary background color
-// /// @type Color
-// $primary-background-color: $black !default;
-//
-// /// primary text color
-// /// @type Color
-// $primary-text-color: $white !default;
-//
-//
-// /// Copy text color
-// /// @type Color
-// $text-color: $black !default;
-//
-// /// Main brand color
-// /// @type Color
-// $brand-color: $white;
-//
-//
-//
-//
-//
-// /// Container's maximum width
-// /// @type Length
-// $max-width: 1180px !default;
-//
-//
-//
-//
-//
-// /// Breakpoints map
-// /// @prop {String} keys - Keys are identifiers mapped to a given length
-// /// @prop {Map} values - Values are actual breakpoints expressed in pixels
-// /// @see {mixin} respond-to
-// $breakpoints: (
-//   'small': (320px),
-//   'medium': (600px),
-//   'large': (1140px),
-// ) !default;
-//
-//
-//
-//
-//
-//
-// /// Relative or absolute URL where all assets are served from
-// /// @type String
-// /// @example scss - When using a CDN
-// ///   $base-url: 'http://cdn.example.com/assets/';
-// $base-url: '../img' !default;
-//
-// ///margin setting for center
-// ///@type margin
-// $margin-auto-center: 0, auto;
-//
-// ///padding setting for nav and ul
-// ///@type padding
-// $nav-padding: 0.5rem 0.5rem 0 0.5rem;

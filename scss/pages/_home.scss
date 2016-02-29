@@ -1,25 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-// content wrapper  for a sticky footer.
-html, body {
- height: 100%;
-}
-
 .content-wrapper {
-  $base-border-radius: 3px !default;
-  $base-line-height: 1.5em !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $base-background-color: transparentize($base-font-color, 0.8);    $action-color: #477DCA !default;
-  $content-background-color: #324766;
-  $content-wrapper-background-top: #7F99BE;
-  $content-wrapper-background-bottom: #20392B;
-  $content-wrapper-color: white;
-  $large-screen: em(860) !default;
-  $med-screen: em(600) !default;
+ $content-background-color: $blue-gray;
+  $content-wrapper-background-top: $ligh-blue-gray;
+  $content-wrapper-background-bottom: $dark-green;
   $gradient-angle: 10deg;
-  $icon-blog-entry-size: 5em;
+  $icon-size: 5em;
+  $icon-border-radius: 50%;
+  $comment-gutter: 1.4em;
+  $image-padding: 0.7em;
+  // $image-width: 4em;
+  $image-width: 100%;
+  $comment-detail-color: transparentize($base-font-color, 0.5);
+  $image-vert-alignment: top;
   $content-wrapper-image: '../img/old_world.jpg';
 
   @include background(url($content-wrapper-image), linear-gradient($gradient-angle, $content-wrapper-background-bottom, $content-wrapper-background-top), no-repeat $content-wrapper-background-top scroll);
@@ -51,102 +45,100 @@ html, body {
       padding: 0;
 
       .blog-entry {
+        display: inline-block;
         @include flex-basis(20em);
         @include flex-grow(1);
+        float: left;
 
         .blog-entry-icon {
           background: $base-background-color;
-          border-radius: 50%;
+          border-radius: $icon-border-radius;
+          height: $icon-size;
+          padding: $icon-size / 4;
+          width: $icon-size;
           float: left;
-          height: $icon-blog-entry-size;
-          padding: $icon-blog-entry-size / 4;
-          width: $icon-blog-entry-size;
         }
 
         .blog-entry-content {
-          margin-left: $icon-blog-entry-size * 1.4;
+          margin-left: $icon-size * 1.4;
           margin-bottom: 2em;
 
           h2 {
             border-bottom: 1px solid $base-background-color;
-            display: inline-block;
-            font-size: $icon-blog-entry-size / 2.5;
-            font-family: "Redressed";
-            margin: 0 0 ($icon-blog-entry-size / 6) 0;
-            padding-top: $icon-blog-entry-size / 7;
+            font-size: $icon-size / 2.5;
+            font-family: $redressed;
+            margin: 0 0 ($icon-size / 6) 0;
+            padding-top: $icon-size / 7;
           }
 
           p {
             color: $base-font-color;
             line-height: $base-line-height;
-            font-family: "Redressed";
+            font-family: $redressed;
            }
+           //comenta
+           .comment {
+             border-bottom: 1px solid transparentize($base-font-color, 0.9);
+             display: table;
+             margin-bottom: $base-spacing;
+             padding-bottom: 1em;
+             width: 100%;
+
+             .comment-image,  .comment-content {
+               display: table-cell;
+               vertical-align: $image-vert-alignment;
+             }
+
+             .comment-image {
+              //  padding-right: $comment-gutter;
+              background: $base-background-color;
+              border-radius: $icon-border-radius;
+              width: $icon-size;
+              height: $icon-size;
+              padding: $icon-size / 4;
+              float: left;
+
+               > img {
+                 border-radius: $base-border-radius;
+                 width: $image-width;
+                 height: auto;
+                 max-width: none;
+                 padding: $image-padding;
+               }
+
+               .comment-reverse-order & {
+                 padding-right: 0;
+                 padding-left: 10px;
+               }
+             }
+
+             .comment-content {
+               width: 100%;
+
+               h1 {
+                 font-size: 1em;
+                 margin: 0 0 0.5em 0;
+               }
+
+               p {
+                 line-height: 1.5em;
+                 margin-bottom: 0.5em;
+               }
+
+               p.comment-detail {
+                 color: $comment-detail-color;
+                 font-size: 0.9em;
+                 font-style: italic;
+               }
+             }
+           }
+         }
         }
+        @include clearfix;
+
       }
     }
   }
-  //comenta
-  .comment {
-    $base-spacing: 1.5em !default;
-    $comment-gutter: 1.4em;
-    $comment-image-padding: 0.7em;
-    $comment-image-width: 4em;
-    $comment-color: $base-font-color;
-    $comment-background: $base-background-color;
-    $comment-detail-color: transparentize($comment-color, 0.5);
-    $comment-image-vert-alignment: top;
-
-    border-bottom: 1px solid transparentize($comment-color, 0.9);
-    display: table;
-    margin-bottom: $base-spacing;
-    padding-bottom: 1em;
-    width: 100%;
-
-    .comment-image,  .comment-content {
-      display: table-cell;
-      vertical-align: $comment-image-vert-alignment;
-    }
-
-    .comment-image {
-      padding-right: $comment-gutter;
-
-      > img {
-        background: $comment-background;
-        border-radius: $base-border-radius;
-        display: block;
-        height: auto;
-        max-width: none;
-        padding: $comment-image-padding;
-        width: $comment-image-width;
-      }
-
-      .comment-reverse-order & {
-        padding-right: 0;
-        padding-left: 10px;
-      }
-    }
-
-    .comment-content {
-      width: 100%;
-
-      h1 {
-        font-size: 1em;
-        margin: 0 0 0.5em 0;
-      }
-
-      p {
-        line-height: 1.5em;
-        margin-bottom: 0.5em;
-      }
-
-      p.comment-detail {
-        color: $comment-detail-color;
-        font-size: 0.9em;
-        font-style: italic;
-      }
-    }
-  }
-}
 
 .content-wrapper:after {
   content: "";

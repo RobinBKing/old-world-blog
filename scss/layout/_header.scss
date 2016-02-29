@@ -1,71 +1,9 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of  the site/application.
 // ----------------------------------------------------------------------------
-.banner {
-  $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
-  $large-screen: em(860) !default;
-  $banner-background-top: #7F99BE;
-  $banner-background-bottom: #20392B;
-  $banner-color: white;
-  $gradient-angle: 10deg;
-  $banner-image: '../img/banner.jpg';
-
-  @include background(url($banner-image), linear-gradient($gradient-angle, $banner-background-bottom, $banner-background-top), no-repeat $banner-background-top scroll);
-  background-color: #324766;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 3em;
-
-  .banner-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-  }
-
-  .banner-inner {
-    @include outer-container;
-    @include clearfix;
-    margin: auto;
-    padding: 3.5em;
-    text-align: center;
-
-    .banner-copy {
-      text-align: center;
-
-      h1 {
-        color: $banner-color;
-        font-size: 1.6em;
-        margin-bottom: 0.5em;
-        font-family: "Redressed";
-
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
-      }
-
-      p {
-        color: $banner-color;
-        line-height: 1.4em;
-        margin: 0 auto 3em auto;
-        font-family: "Redressed";
-
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
-        }
-      }
-    }
-  }
-}
-
 // Based on http://codepen.io/skeurentjes/
 header.navigation {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
+  $navigation-border-color: gainsboro !default;
   $navigation-padding: 1em;
   $navigation-background: desaturate(darken($action-color, 20%), 30%);
   $navigation-color: transparentize(white, 0.3);
@@ -80,6 +18,10 @@ header.navigation {
   $navigation-submenu-padding: 1em;
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
+  $banner-background: $blue-gray;
+  $banner-background-top: $ligh-blue-gray;
+  $banner-background-bottom: $dark-green;
+  $banner-color: white;
 
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
@@ -87,6 +29,59 @@ header.navigation {
   width: 100%;
   z-index: 999;
 
+  .banner {
+    $gradient-angle: 10deg;
+    $banner-image: '../img/banner.jpg';
+
+    @include background(url($banner-image), linear-gradient($gradient-angle, $banner-background-bottom, $banner-background-top), no-repeat $banner-background-top scroll);
+    background-color: $banner-background;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25em;
+    padding-bottom: 1em;
+
+    .banner-logo img {
+      height: 4em;
+      margin-bottom: 1em;
+      background-color: $banner-background;
+    }
+
+    .banner-inner {
+      @include outer-container;
+      @include clearfix;
+      margin: auto;
+      padding: 3.5em;
+      text-align: left;
+
+      .banner-copy {
+        text-align: left;
+
+        h1 {
+          color: $banner-color;
+          font-size: 4em;
+          margin-bottom: 0.5em;
+          font-family: $redressed;
+
+          @include media($large-screen) {
+            font-size: 6em;
+          }
+        }
+
+        p {
+          color: $banner-color;
+          line-height: 1.4em;
+          margin: 0 auto 3em auto;
+          font-family: $redressed;
+
+          @include media($large-screen) {
+            font-size: 2em;
+            max-width: 40%;
+          }
+        }
+      }
+    }
+  }
   .navigation-wrapper {
     @include clearfix;
     @include outer-container;
@@ -331,7 +326,7 @@ header.navigation {
 
   // Search bar
   .search-bar {
-    $search-bar-border-color: $base-border-color;
+    $search-bar-border-color: $navigation-border-color;
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10%);
 
