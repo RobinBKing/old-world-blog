@@ -6,18 +6,25 @@ html, body {
  height: 100%;
 }
 
-.contentWrapper {
+.content-wrapper {
   $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
+  $base-line-height: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $base-background-color: transparentize($base-font-color, 0.8);    $action-color: #477DCA !default;
+  $content-background-color: #324766;
+  $content-wrapper-background-top: #7F99BE;
+  $content-wrapper-background-bottom: #20392B;
+  $content-wrapper-color: white;
   $large-screen: em(860) !default;
-  $contentWrapper-background-top: #7F99BE;
-  $contentWrapper-background-bottom: #20392B;
-  $contentWrapper-color: white;
+  $med-screen: em(600) !default;
   $gradient-angle: 10deg;
-  $contentWrapper-image: '../img/old_world.jpg';
+  $icon-blog-entry-size: 5em;
+  $content-wrapper-image: '../img/old_world.jpg';
 
-  @include background(url($contentWrapper-image), linear-gradient($gradient-angle, $contentWrapper-background-bottom, $contentWrapper-background-top), no-repeat $contentWrapper-background-top scroll);
-  background-color: #324766;
+  @include background(url($content-wrapper-image), linear-gradient($gradient-angle, $content-wrapper-background-bottom, $content-wrapper-background-top), no-repeat $content-wrapper-background-top scroll);
+
+  background-color: $content-background-color;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,7 +33,7 @@ html, body {
   height: 100%;
   margin: 0 auto -4em;
 
-  .contentWrapper-inner {
+  .content-wrapper-inner {
     @include outer-container;
     @include clearfix;
     margin: 0, auto;
@@ -34,114 +41,58 @@ html, body {
     text-align: center;
     max-width: 68em;
 
-    .contentWrapper-copy {
-      text-align: center;
+      //blog-entries
+    .blog-entries {
+      @include display(flex);
+      @include flex-wrap(wrap);
+      margin-bottom: $base-line-height;
+      margin: 1em;
+      overflow: auto;
+      padding: 0;
 
-      h1 {
-        color: $contentWrapper-color;
-        font-size: 1.6em;
-        margin-bottom: 0.5em;
-        font-family: "Redressed";
+      .blog-entry {
+        @include flex-basis(20em);
+        @include flex-grow(1);
 
-        @include media($large-screen) {
-          font-size: 1.8em;
+        .blog-entry-icon {
+          background: $base-background-color;
+          border-radius: 50%;
+          float: left;
+          height: $icon-blog-entry-size;
+          padding: $icon-blog-entry-size / 4;
+          width: $icon-blog-entry-size;
         }
-      }
 
-      p {
-        color: $contentWrapper-color;
-        line-height: 1.4em;
-        margin: 0 auto 3em auto;
-        font-family: "Redressed";
+        .blog-entry-content {
+          margin-left: $icon-blog-entry-size * 1.4;
+          margin-bottom: 2em;
 
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
+          h2 {
+            border-bottom: 1px solid $base-background-color;
+            display: inline-block;
+            font-size: $icon-blog-entry-size / 2.5;
+            font-family: "Redressed";
+            margin: 0 0 ($icon-blog-entry-size / 6) 0;
+            padding-top: $icon-blog-entry-size / 7;
+          }
+
+          p {
+            color: $base-font-color;
+            line-height: $base-line-height;
+            font-family: "Redressed";
+           }
         }
       }
     }
   }
-  //blog-entries
-  .blog-entries {
-    $base-line-height: 1.5em !default;
-    $action-color: #477DCA !default;
-    $dark-gray: #333 !default;
-    $base-font-color: $dark-gray !default;
-    $icon-blog-entry-size: 5em;
-    $base-background-color: transparentize($base-font-color, 0.8);
-
-    @include display(flex);
-    @include flex-wrap(wrap);
-    margin-bottom: $base-line-height;
-    margin: 1em;
-    overflow: auto;
-    padding: 0;
-
-    .blog-entry {
-      @include flex-basis(20em);
-      @include flex-grow(1);
-    }
-
-    .blog-entry-icon {
-      background: $base-background-color;
-      border-radius: 50%;
-      float: left;
-      height: $icon-blog-entry-size;
-      padding: $icon-blog-entry-size / 4;
-      width: $icon-blog-entry-size;
-    }
-
-    .blog-entry-icon-1 {
-      background: $action-color;
-    }
-
-    .blog-entry-icon-2 {
-      background: adjust-hue($action-color, -50%);
-    }
-
-    .blog-entry-icon-3 {
-      background: adjust-hue($action-color, -140%);
-    }
-
-    .blog-entry-content {
-      margin-left: $icon-blog-entry-size * 1.4;
-      margin-bottom: 2em;
-    }
-
-    h2 {
-      border-bottom: 1px solid $base-background-color;
-      display: inline-block;
-      font-size: $icon-blog-entry-size / 2.5;
-      margin: 0 0 ($icon-blog-entry-size / 6) 0;
-      padding-top: $icon-blog-entry-size / 7;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    p {
-      color: $base-font-color;
-      line-height: $base-line-height;
-    }
-
-    img {
-      max-width: 100%;
-    }
-  }
-
   //comenta
   .comment {
-    $base-border-radius: 3px !default;
     $base-spacing: 1.5em !default;
-    $action-color: #477DCA !default;
-    $dark-gray: #333 !default;
-    $base-font-color: $dark-gray !default;
     $comment-gutter: 1.4em;
     $comment-image-padding: 0.7em;
     $comment-image-width: 4em;
     $comment-color: $base-font-color;
-    $comment-background: lighten($action-color, 15%);
+    $comment-background: $base-background-color;
     $comment-detail-color: transparentize($comment-color, 0.5);
     $comment-image-vert-alignment: top;
 
@@ -197,7 +148,7 @@ html, body {
   }
 }
 
-.contentWrapper:after {
+.content-wrapper:after {
   content: "";
   display: block;
   height: 17em;
