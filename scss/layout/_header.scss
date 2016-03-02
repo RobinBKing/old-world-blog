@@ -3,7 +3,6 @@
 // ----------------------------------------------------------------------------
 // Based on http://codepen.io/skeurentjes/
 header.navigation {
-  $navigation-border-color: gainsboro !default;
   $navigation-padding: 1em;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
@@ -318,7 +317,7 @@ header.navigation {
 
   // Search bar
   .search-bar {
-    $search-bar-border-color: $navigation-border-color;
+    $search-bar-border-color: $base-border-color;
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10%);
 

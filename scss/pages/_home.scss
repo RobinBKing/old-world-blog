@@ -51,7 +51,7 @@
         float: left;
 
         .blog-entry-icon {
-          background: $base-background-color;
+          background: transparentize(white, 0.8);
           border-radius: $icon-border-radius;
           height: $icon-size;
           padding: $icon-size / 4;
@@ -91,7 +91,7 @@
 
              .comment-image {
               //  padding-right: $comment-gutter;
-              background: $base-background-color;
+              background: transparentize(white, 0.8);
               border-radius: $icon-border-radius;
               width: $icon-size;
               height: $icon-size;
@@ -129,6 +129,10 @@
                  color: $comment-detail-color;
                  font-size: 0.9em;
                  font-style: italic;
+               }
+
+               input {
+                 background-color: transparentize(white, 0.8);
                }
              }
            }

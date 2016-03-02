@@ -37,13 +37,14 @@ $base-font-color-hover: white;
 $action-color: $blue;
 
 // Border
-$base-border-color: lighten($blue-gray, 30%);
+// $base-border-color: lighten($blue-gray, 30%);
+$base-border-color: gainsboro;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
 // $base-background-color: transparentize($base-font-color, 0.8);
 $base-background-color: desaturate(darken($action-color, 20%), 30%);
-$secondary-background-color: tint($base-border-color, 75%);
+$secondary-background-color: desaturate(lighten($base-border-color, 75%), 30%);
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
