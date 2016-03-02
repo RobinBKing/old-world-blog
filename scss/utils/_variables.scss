@@ -31,15 +31,18 @@ $light-gray: #ddd;
 $dark-green: #20392B;
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: darken($blue-gray, 20%);
+$base-header-font-color: lighten($blue-gray, 30%);
+$base-font-color-hover: white;
 $action-color: $blue;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: lighten($blue-gray, 30%);
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: transparentize($base-font-color, 0.8);
+// $base-background-color: transparentize($base-font-color, 0.8);
+$base-background-color: desaturate(darken($action-color, 20%), 30%);
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
