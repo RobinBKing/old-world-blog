@@ -2,6 +2,12 @@
 // This file contains all styles related to the header of  the site/application.
 // ----------------------------------------------------------------------------
 // Based on http://codepen.io/skeurentjes/
+.header-text {
+  color: $base-header-font-color;
+  font-family: $redressed;
+  text-shadow: 2px 2px $base-font-color;
+}
+
 header.navigation {
   $navigation-padding: 1em;
   $navigation-height: 60px;
@@ -49,10 +55,9 @@ header.navigation {
         text-align: left;
 
         h1 {
-          color: $base-header-font-color;
+          @extend  .header-text;
           font-size: 4em;
           margin-bottom: 0.5em;
-          font-family: $redressed;
 
           @include media($large-screen) {
             font-size: 6em;
@@ -60,10 +65,9 @@ header.navigation {
         }
 
         p {
-          color: $base-header-font-color;
+          @extend  .header-text;
           line-height: 1.4em;
           margin: 0 auto 3em auto;
-          font-family: $redressed;
 
           @include media($large-screen) {
             font-size: 2em;
@@ -93,9 +97,8 @@ header.navigation {
   }
 
   // Mobile view
-
   .navigation-menu-button {
-    color: $base-header-font-color;
+    @extend  .header-text;
     display: block;
     float: right;
     line-height: $navigation-height;
@@ -115,7 +118,6 @@ header.navigation {
   }
 
   // Nav menu
-
   nav {
     float: none;
     min-height: $navigation-height;
@@ -147,7 +149,6 @@ header.navigation {
   }
 
   // The nav items
-
   ul li.nav-link {
     background: $base-background-color;
     display: block;
@@ -167,7 +168,7 @@ header.navigation {
     }
 
     a {
-      color: $base-header-font-color;
+      @extend  .header-text;
       display: inline-block;
       text-decoration: none;
 

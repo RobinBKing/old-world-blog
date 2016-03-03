@@ -2,6 +2,11 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 // Uncomment this for a sticky footer.
+.footer-text {
+  color: $base-header-font-color;
+  font-family: $redressed;
+  text-shadow: 2px 2px $base-font-color;
+}
 .footer-2 {
   height: 17em;
 
@@ -11,12 +16,11 @@
 }
 
 .footer-2 {
-  $footer-background: desaturate(darken($action-color, 20%), 30%);
   $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+  $footer-link-color: transparentize(white, 0.5);
+  $footer-disclaimer-color: transparentize(white, 0.5);
 
-  background: $footer-background;
+  background: $base-background-color;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;
@@ -59,12 +63,12 @@
   }
 
   ul li a {
-    color: $footer-link-color;
+    @extend .footer-text;
     text-decoration: none;
 
     &:focus,
     &:hover {
-      color: transparentize($footer-color, 0);
+      color: $base-font-color-hover;
     }
   }
 
